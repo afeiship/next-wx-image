@@ -30,7 +30,34 @@
           wx.previewImage(inOptions);
         });
       },
-      upload: function(){}
+      upload: function(inId, inOptions){
+        wx.ready(function(){
+          return new Promise(function( resolve, _ ){
+            wx.uploadImage( nx.mix({
+              localId: inId,
+              success: function( data ){
+                resolve( { status:'success', data: data} );
+              },
+              fail: function( data ){
+                resolve( { status:'fail', data: data} );
+              },
+              complete: function( data ){
+                resolve( { status:'complete', data: data } );
+              }
+            }, inOptions) );
+          });
+        });
+      },
+      uploads: function(inIds, inOptions){
+        var self = this;
+        var uploaders = nx.map( inIds, function(_, id){ self.upload( id, inOptions ); });
+        return Promise.all( uploaders ).then(function(response){
+          var serverIds = nx.map( response, function( _, item ){ return item.data.serverId; });
+          return new Promise(function(resolve){
+            resolve({ serverIds: serverIds, data: response });
+          });
+        });
+      }
     }
   });
 
