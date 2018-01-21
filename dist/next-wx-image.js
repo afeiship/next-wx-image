@@ -50,8 +50,7 @@
         });
       },
       uploads: function(inIds, inOptions){
-        var self = this;
-        var uploaders = nx.map( inIds, function(_, id){ self.upload( id, inOptions ); });
+        var uploaders = nx.map( inIds, function(_, id){ NxWxImage.upload( id, inOptions ); });
         return Promise.all( uploaders ).then(function(response){
           var serverIds = nx.map( response, function( _, item ){ return item.data.serverId; });
           return new Promise(function(resolve){

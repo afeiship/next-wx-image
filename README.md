@@ -10,4 +10,17 @@ npm install -S afeiship/next-wx-image --registry=https://registry.npm.taobao.org
 ## usage:
 ```js
 import NxWxImage from 'next-wx-image';
+
+// choose:
+NxWxImage.choose(inOptions);
+
+// preview:
+NxWxImage.preview(inIndex,inItems);
+
+// upload:
+NxWxImage.upload(inLocalId, inOptions);
+
+// uploads:
+NxWxImage.uploads(inLocalIds, inOptions);
+
 ```
