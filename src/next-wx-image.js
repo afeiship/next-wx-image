@@ -25,9 +25,10 @@
           });
         });
       },
-      preview: function(inOptions){
+      preview: function(inIndex, inItems){
+        var current = inItems[ inIndex ];
         wx.ready(function(){
-          wx.previewImage(inOptions);
+          wx.previewImage({ current: current, urls: inItems });
         });
       },
       upload: function(inId, inOptions){
