@@ -2,7 +2,12 @@
 > Wechat api for image part.
 
 
-## resources:
+## install:
+```bash
+npm install -S afeiship/next-wx-image --registry=https://registry.npm.taobao.org
+```
 
-## todos:
-- [ ] unit test case
+## usage:
+```js
+import NxWxImage from 'next-wx-image';
+```
