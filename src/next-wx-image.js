@@ -8,17 +8,17 @@
     statics: {
       choose: function(inOptions){
         wx.ready(function () {
-          return new Promise(function(resove, _){
+          return new Promise(function(resolve, _){
             wx.chooseImage(
               nx.mix( inOptions, {
                 success: function( data ){
-                  resove( { status:'success', data: data} );
+                  resolve( { status:'success', data: data} );
                 },
                 fail: function( data ){
-                  resove( { status:'fail', data: data} );
+                  resolve( { status:'fail', data: data} );
                 },
                 complete: function( data ){
-                  resolve( { status:'complete', data: data } )
+                  resolve( { status:'complete', data: data } );
                 }
               })
             )
