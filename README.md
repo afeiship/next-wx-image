@@ -23,4 +23,7 @@ NxWxImage.upload(inLocalId, inOptions);
 // uploads:
 NxWxImage.uploads(inLocalIds, inOptions);
 
+// download:
+NxWxImage.download(inLocalIds, inOptions);
+
 ```

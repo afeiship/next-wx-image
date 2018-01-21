@@ -57,6 +57,25 @@
             resolve({ serverIds: serverIds, data: response });
           });
         });
+      },
+      download: function(inOptions){
+        wx.ready(function () {
+          return new Promise(function(resolve, _){
+            wx.downloadImage(
+              nx.mix( inOptions, {
+                success: function( data ){
+                  resolve( { status:'success', data: data} );
+                },
+                fail: function( data ){
+                  resolve( { status:'fail', data: data} );
+                },
+                complete: function( data ){
+                  resolve( { status:'complete', data: data } );
+                }
+              })
+            );
+          });
+        });
       }
     }
   });
