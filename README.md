@@ -28,4 +28,4 @@ NxWxImage.download(inLocalIds, inOptions);
 
 ```
 ## todos
-- use __WEIXIN_READY___ instead of wx.ready
+- use `__WEIXIN_READY___` instead of wx.ready
