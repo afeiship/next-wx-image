@@ -6,7 +6,7 @@
   var NxWxImage = nx.declare('nx.WxImage', {
     statics: {
       choose: function(inOptions) {
-        return new Promise(function(resolve, _) {
+        return new Promise(function(resolve, reject) {
           if (global.__WEIXIN_READY___) {
             wx.chooseImage(
               nx.mix(inOptions, {
@@ -36,7 +36,7 @@
         });
       },
       upload: function(inId, inOptions) {
-        return new Promise(function(resolve, _) {
+        return new Promise(function(resolve, reject) {
           if (global.__WEIXIN_READY___) {
             wx.uploadImage(
               nx.mix(inOptions, {
@@ -74,7 +74,7 @@
         });
       },
       download: function(inOptions) {
-        return new Promise(function(resolve, _) {
+        return new Promise(function(resolve, reject) {
           if (global.__WEIXIN_READY___) {
             wx.downloadImage(
               nx.mix(inOptions, {
