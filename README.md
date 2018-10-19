@@ -27,5 +27,3 @@ NxWxImage.uploads(inLocalIds, inOptions);
 NxWxImage.download(inLocalIds, inOptions);
 
 ```
-## todos
-- [x] use `__WEIXIN_READY___` instead of wx.ready
