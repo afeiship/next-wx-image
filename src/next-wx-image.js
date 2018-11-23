@@ -29,11 +29,11 @@
           }
         });
       },
-      preview: function(inIndex, inItems) {
-        var current = inItems[inIndex];
-        wx.ready(function() {
+      preview: function(inCurrent, inItems) {
+        var current = typeof inCurrent === 'number' ? inItems[inCurrent] : inCurrent;
+        if (global.__WEIXIN_READY___) {
           wx.previewImage({ current: current, urls: inItems });
-        });
+        }
       },
       upload: function(inId, inOptions) {
         return new Promise(function(resolve, reject) {
